@@ -39,6 +39,28 @@ const config: Config = {
           cream: '#FAFAF8',
           sand: '#F0EBE3',
         },
+        plex: {
+          navy: {
+            950: '#030912',
+            900: '#060F1E',
+            800: '#0A1628',
+            700: '#0D2040',
+            600: '#162952',
+          },
+          green: {
+            900: '#071A10',
+            800: '#0B2D1C',
+            700: '#0F3F2A',
+          },
+          gold: {
+            300: '#F5E9B8',
+            400: '#E8C97A',
+            500: '#C9A84C',
+            600: '#A8883A',
+            700: '#8B6914',
+          },
+          cream: '#F8F6F0',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
