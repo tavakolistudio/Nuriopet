@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-sans;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-dm-sans);
+    @apply tracking-tight;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-green-700 rounded-sm;
+  }
+}
+
+@layer components {
+  .container-xl {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-py {
+    @apply py-20 md:py-28;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 tracking-tight;
+    font-family: var(--font-dm-sans);
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-500 leading-relaxed max-w-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-brand-green-700 text-white border border-transparent
+           hover:bg-brand-green-800 active:bg-brand-green-900
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-primary-navy {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-brand-navy-700 text-white border border-transparent
+           hover:bg-brand-navy-800 active:bg-brand-navy-900
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-transparent text-brand-green-700 border border-brand-green-700
+           hover:bg-brand-green-50 active:bg-brand-green-100
+           transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-white/10 text-white border border-white/30
+           hover:bg-white/20 active:bg-white/30
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
