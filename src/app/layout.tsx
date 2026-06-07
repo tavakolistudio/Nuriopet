@@ -2,63 +2,55 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nurio | Gerçek Emilim. Gerçek Sonuç.',
+  title: 'Nurio Plex | Gerçek Performans, Gerçek Emilimle Başlar',
   description:
-    'Nurio, gelişmiş şelat teknolojisiyle formüle edilmiş kedi ve köpek mineral takviyesidir. Minerallerin vücutta daha stabil kalmasını ve daha etkili kullanılmasını destekler.',
+    'Nurio Plex, gelişmiş şelat teknolojisiyle çiftlik hayvanlarında mineral biyoyararlanımını destekler. Süt sığırı, et sığırı, koyun ve keçi için profesyonel mineral besleme çözümü.',
   keywords: [
     'şelatlı mineral',
-    'pet mineral takviyesi',
-    'kedi mineral',
-    'köpek mineral',
-    'Nurio Cat',
-    'Nurio Dog',
     'chelated mineral',
-    'evcil hayvan takviye',
+    'hayvan besleme',
+    'livestock mineral supplement',
+    'süt sığırı takviyesi',
+    'biyoyararlanım',
+    'bioavailability',
+    'Nurio Plex',
+    'Advanced Chelated Compound Technology',
   ],
-  authors: [{ name: 'Nurio Pet', url: 'https://advanimal.com.tr' }],
-  creator: 'Nurio Pet',
-  publisher: 'Nurio Pet',
+  authors: [{ name: 'Nurio Plex', url: 'https://nurioplex.com' }],
+  creator: 'Nurio Plex',
+  publisher: 'Nurio Plex',
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
-    url: 'https://advanimal.com.tr',
-    siteName: 'Nurio Pet',
-    title: 'Nurio | Gerçek Emilim. Gerçek Sonuç.',
+    siteName: 'Nurio Plex',
+    title: 'Nurio Plex | Advanced Chelated Mineral Nutrition',
     description:
-      'Gelişmiş şelat teknolojisiyle kedi ve köpekler için yeni nesil mineral takviyesi. Takviye değil, emilim farkı.',
+      'Gelişmiş şelat teknolojisiyle çiftlik hayvanları için yüksek biyoyararlanımlı mineral besleme çözümü.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/plex-product.png',
         width: 1200,
-        height: 630,
-        alt: 'Nurio Pet — Şelatlı Mineral Takviyesi',
+        height: 675,
+        alt: 'Nurio Plex — Advanced Chelated Mineral Supplement for Livestock',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nurio | Gerçek Emilim. Gerçek Sonuç.',
+    title: 'Nurio Plex | Advanced Chelated Mineral Nutrition',
     description:
-      'Gelişmiş şelat teknolojisiyle kedi ve köpekler için yeni nesil mineral takviyesi.',
-    images: ['/og-image.jpg'],
+      'Gelişmiş şelat teknolojisiyle çiftlik hayvanları için yüksek biyoyararlanımlı mineral besleme çözümü.',
+    images: ['/images/plex-product.png'],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-    },
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
-  metadataBase: new URL('https://advanimal.com.tr'),
+  metadataBase: new URL('https://nurioplex.com'),
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr" className="scroll-smooth">
       <head>
