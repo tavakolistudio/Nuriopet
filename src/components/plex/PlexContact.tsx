@@ -97,7 +97,7 @@ export default function PlexContact() {
                 height={48}
                 className="h-9 w-auto object-contain mb-2"
               />
-              <p className="text-[#C9A84C]/70 text-xs uppercase tracking-widest">Advanced Chelated Mineral Nutrition</p>
+              <p className="text-[#C9A84C]/70 text-xs uppercase tracking-widest">{t.footer.tagline}</p>
             </div>
 
             <div className="h-px bg-white/8" />
@@ -129,9 +129,9 @@ export default function PlexContact() {
             {/* Target audience tags */}
             <div className="mt-auto">
               <div className="h-px bg-white/8 mb-6" />
-              <p className="text-slate-500 text-xs uppercase tracking-wider mb-3">For</p>
+              <p className="text-slate-500 text-xs uppercase tracking-wider mb-3">{t.contact.targetLabel}</p>
               <div className="flex flex-wrap gap-2">
-                {['Livestock Farms', 'Veterinarians', 'Feed Companies', 'Nutrition Consultants'].map((tag) => (
+                {[t.contact.target1, t.contact.target2, t.contact.target3, t.contact.target4].map((tag) => (
                   <span key={tag} className="bg-white/5 border border-white/8 text-slate-400 text-xs px-3 py-1 rounded-full">
                     {tag}
                   </span>
