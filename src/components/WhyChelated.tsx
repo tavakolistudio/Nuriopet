@@ -54,7 +54,7 @@ export default function WhyChelated() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="teknoloji" className="section-py bg-white" ref={ref}>
+    <section id="teknoloji" className="section-py" ref={ref}>
       <div className="container-xl">
         {/* Section header */}
         <motion.div
@@ -63,7 +63,8 @@ export default function WhyChelated() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="badge bg-brand-green-50 text-brand-green-700 border border-brand-green-200 mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase
+                           bg-teal-500/15 text-teal-300 border border-teal-400/30 mb-4">
             Teknoloji
           </span>
           <h2 className="section-title mb-4">
@@ -77,7 +78,7 @@ export default function WhyChelated() {
 
         {/* Comparison visual */}
         <motion.div
-          className="mb-14 p-6 md:p-8 rounded-2xl bg-brand-beige border border-gray-200"
+          className="mb-14 p-6 md:p-8 rounded-2xl bg-white/[0.05] border border-white/10 backdrop-blur-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -85,34 +86,34 @@ export default function WhyChelated() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Standard */}
             <div className="flex flex-col gap-4">
-              <h3 className="text-sm font-semibold tracking-widest uppercase text-gray-400">
+              <h3 className="text-sm font-semibold tracking-widest uppercase text-white/40">
                 Standart Mineral Takviyesi
               </h3>
-              <div className="relative h-12 rounded-xl bg-gray-200 overflow-hidden">
-                <div className="absolute inset-y-0 left-0 w-[40%] bg-gray-400 rounded-xl flex items-center justify-end pr-3">
-                  <span className="text-xs font-semibold text-white">~40%</span>
+              <div className="relative h-12 rounded-xl bg-white/10 overflow-hidden">
+                <div className="absolute inset-y-0 left-0 w-[40%] bg-white/25 rounded-xl flex items-center justify-end pr-3">
+                  <span className="text-xs font-semibold text-white/80">~40%</span>
                 </div>
               </div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-white/50">
                 İnorganik mineraller sindirim ortamında reaksiyona girebilir; emilim potansiyeli sınırlı kalabilir.
               </p>
             </div>
             {/* Chelated */}
             <div className="flex flex-col gap-4">
-              <h3 className="text-sm font-semibold tracking-widest uppercase text-brand-green-700">
+              <h3 className="text-sm font-semibold tracking-widest uppercase text-teal-400">
                 Şelatlı Mineral — Nurio
               </h3>
-              <div className="relative h-12 rounded-xl bg-brand-green-100 overflow-hidden">
-                <div className="absolute inset-y-0 left-0 w-[80%] bg-brand-green-700 rounded-xl flex items-center justify-end pr-3">
+              <div className="relative h-12 rounded-xl bg-teal-500/15 overflow-hidden">
+                <div className="absolute inset-y-0 left-0 w-[80%] bg-teal-500 rounded-xl flex items-center justify-end pr-3">
                   <span className="text-xs font-semibold text-white">Daha Yüksek Potansiyel</span>
                 </div>
               </div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-white/50">
                 Şelat yapısı, sindirim sürecinde daha iyi stabilite ve biyoyararlanım potansiyeli sunmak üzere tasarlanmıştır.
               </p>
             </div>
           </div>
-          <p className="text-[10px] text-gray-400 mt-4 text-center">
+          <p className="text-[10px] text-white/30 mt-4 text-center">
             * Gösterim amaçlıdır. Bireysel sonuçlar değişkenlik gösterebilir.
           </p>
         </motion.div>
@@ -122,24 +123,24 @@ export default function WhyChelated() {
           {cards.map((card, i) => (
             <motion.div
               key={card.title}
-              className="card p-7 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300"
+              className="card p-7 flex flex-col gap-4 group hover:-translate-y-1 transition-all duration-300"
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="w-14 h-14 rounded-xl bg-brand-green-50 text-brand-green-700 flex items-center justify-center group-hover:bg-brand-green-100 transition-colors">
+              <div className="w-14 h-14 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center group-hover:bg-teal-500/25 transition-colors">
                 {card.icon}
               </div>
               <div>
-                <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug">
+                <h3 className="text-base font-bold text-white mb-2 leading-snug">
                   {card.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-sm text-white/60 leading-relaxed">
                   {card.description}
                 </p>
               </div>
-              <div className="mt-auto pt-4 border-t border-gray-100">
-                <span className="text-xs font-semibold text-brand-green-700 tracking-wide">
+              <div className="mt-auto pt-4 border-t border-white/10">
+                <span className="text-xs font-semibold text-teal-400 tracking-wide">
                   {card.highlight}
                 </span>
               </div>

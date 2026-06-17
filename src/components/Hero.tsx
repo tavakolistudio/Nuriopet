@@ -15,22 +15,15 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: 'linear-gradient(150deg, #fafaf8 0%, #f7f4ee 60%, #edf5f0 100%)' }}
-    >
-      {/* Background dot grid */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Subtle dot grid */}
       <div
-        className="absolute inset-0 opacity-40 pointer-events-none"
+        className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, #1B4D3E18 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)',
           backgroundSize: '28px 28px',
         }}
       />
-
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #1B4D3E 0%, transparent 70%)' }} />
 
       <div className="container-xl relative z-10 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -38,25 +31,26 @@ export default function Hero() {
           {/* ── Left: text content ── */}
           <div className="flex flex-col gap-8">
             <motion.div initial="hidden" animate="visible" custom={0} variants={fadeUp}>
-              <span className="badge bg-brand-green-50 text-brand-green-700 border border-brand-green-200 mb-6 inline-flex">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase
+                               bg-teal-500/15 text-teal-300 border border-teal-400/30 mb-6">
                 Advanced Chelated Mineral Technology
               </span>
               <h1
-                className="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold leading-[1.05] tracking-tight text-gray-900"
+                className="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold leading-[1.05] tracking-tight text-white"
                 style={{ fontFamily: 'DM Sans, sans-serif' }}
               >
                 Takviye değil,{' '}
-                <span className="text-brand-green-700 relative">
+                <span className="text-teal-400 relative">
                   emilim farkı.
-                  <svg className="absolute -bottom-2 left-0 w-full h-2 opacity-30" viewBox="0 0 200 8" preserveAspectRatio="none">
-                    <path d="M0,6 Q50,0 100,4 T200,3" stroke="#1B4D3E" strokeWidth="3" fill="none" strokeLinecap="round" />
+                  <svg className="absolute -bottom-2 left-0 w-full h-2 opacity-40" viewBox="0 0 200 8" preserveAspectRatio="none">
+                    <path d="M0,6 Q50,0 100,4 T200,3" stroke="#2dd4bf" strokeWidth="3" fill="none" strokeLinecap="round" />
                   </svg>
                 </span>
               </h1>
             </motion.div>
 
             <motion.p
-              className="text-lg text-gray-600 leading-relaxed max-w-lg"
+              className="text-lg text-white/70 leading-relaxed max-w-lg"
               initial="hidden" animate="visible" custom={0.15} variants={fadeUp}
             >
               Nurio, gelişmiş şelat teknolojisiyle formüle edilmiş kedi ve köpek mineral takviyesidir.
@@ -67,11 +61,19 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-3"
               initial="hidden" animate="visible" custom={0.3} variants={fadeUp}
             >
-              <Link href="#nurio-dog" className="btn-primary gap-3 py-3.5 px-6">
+              <Link
+                href="#nurio-dog"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl font-semibold text-sm
+                           bg-teal-500 hover:bg-teal-400 text-white transition-all duration-200 shadow-lg shadow-teal-900/30 cursor-pointer"
+              >
                 <span className="text-base" aria-hidden="true">🐕</span>
                 Nurio Dog'u İncele
               </Link>
-              <Link href="#nurio-cat" className="btn-primary-navy gap-3 py-3.5 px-6">
+              <Link
+                href="#nurio-cat"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl font-semibold text-sm
+                           bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all duration-200 cursor-pointer"
+              >
                 <span className="text-base" aria-hidden="true">🐈</span>
                 Nurio Cat'i İncele
               </Link>
@@ -86,15 +88,15 @@ export default function Hero() {
                 { icon: '🎯', label: 'Hedefli Mineral Desteği' },
                 { icon: '✓',  label: 'Net Dozaj Bilgisi' },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2 text-sm text-gray-500">
-                  <span className="text-brand-green-700 font-semibold" aria-hidden="true">{item.icon}</span>
+                <div key={item.label} className="flex items-center gap-2 text-sm text-white/50">
+                  <span className="text-teal-400 font-semibold" aria-hidden="true">{item.icon}</span>
                   {item.label}
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* ── Right: real product photo ── */}
+          {/* ── Right: product photo ── */}
           <motion.div
             className="relative flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.94, y: 24 }}
@@ -102,10 +104,10 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
             {/* Glow behind image */}
-            <div className="absolute inset-0 rounded-3xl opacity-20 blur-3xl pointer-events-none"
-              style={{ background: 'radial-gradient(ellipse, #c8a97a 0%, transparent 70%)' }} />
+            <div className="absolute inset-0 rounded-3xl blur-3xl pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse, rgba(46,125,103,0.35) 0%, transparent 70%)' }} />
 
-            <div className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-lg rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
               <Image
                 src="/images/hero.png"
                 alt="Nurio Cat ve Nurio Dog — Şelatlı Mineral Takviyesi"
@@ -114,12 +116,12 @@ export default function Hero() {
                 priority
                 className="w-full h-auto object-cover"
               />
-              {/* floating label */}
+              {/* floating labels */}
               <div className="absolute bottom-5 left-5 right-5 flex justify-between">
-                <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-800 px-3 py-1.5 rounded-full shadow">
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-xs font-semibold text-white/90 px-3 py-1.5 rounded-full border border-white/20 shadow">
                   🐈 Nurio Cat
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-800 px-3 py-1.5 rounded-full shadow">
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-xs font-semibold text-white/90 px-3 py-1.5 rounded-full border border-white/20 shadow">
                   🐕 Nurio Dog
                 </span>
               </div>
@@ -129,15 +131,15 @@ export default function Hero() {
 
         {/* Brand promise footer */}
         <motion.div
-          className="mt-16 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/35">
             Gerçek Emilim &nbsp;•&nbsp; Gerçek Sonuç
           </p>
-          <p className="text-xs text-gray-400 text-center sm:text-right max-w-sm">
+          <p className="text-xs text-white/30 text-center sm:text-right max-w-sm">
             Bu ürün bir ilaç değildir. Hastalıkların önlenmesi veya tedavisi amacıyla kullanılmaz.
           </p>
         </motion.div>

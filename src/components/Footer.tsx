@@ -3,52 +3,48 @@ import { navLinks } from '@/data/products';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 border-t border-white/5">
+    <footer className="border-t border-white/8 bg-black/20 backdrop-blur-sm">
       <div className="container-xl py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
 
           {/* Brand column */}
           <div className="flex flex-col gap-5">
-            {/* Logo: arch icon SVG (white) + wordmark */}
             <div className="flex items-center gap-3">
-              {/* Nurio arch icon — brand yellow on dark bg */}
               <svg
                 viewBox="0 0 64 64"
                 fill="none"
                 className="w-10 h-10 flex-shrink-0"
                 aria-hidden="true"
               >
-                {/* Main organic blob */}
                 <path
                   d="M8,48 C4,40 4,20 10,12 C15,5 24,4 32,6 C36,7 40,8 44,12 C50,17 54,26 52,36 C50,44 44,50 36,52 C28,54 12,56 8,48Z"
-                  fill="#E8B800"
+                  fill="#2dd4bf"
+                  opacity="0.85"
                 />
-                {/* Arch tunnel cutout — creates the "n" arch feel */}
                 <path
                   d="M22,52 L22,36 C22,28 26,22 32,22 C38,22 42,28 42,36 L42,52"
-                  stroke="#1a1a1a"
+                  stroke="#0b1d13"
                   strokeWidth="8"
                   strokeLinecap="round"
                   fill="none"
                 />
-                {/* Dot */}
-                <circle cx="52" cy="12" r="5" fill="#E8B800" />
+                <circle cx="52" cy="12" r="5" fill="#2dd4bf" opacity="0.85" />
               </svg>
               <div>
                 <p className="text-lg font-bold leading-tight text-white" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                   nurio
                 </p>
-                <p className="text-xs font-bold tracking-widest text-[#E8B800] leading-tight">
-                  PLEX
+                <p className="text-xs font-bold tracking-widest text-teal-400 leading-tight">
+                  PET
                 </p>
               </div>
             </div>
 
-            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
+            <p className="text-sm text-white/45 leading-relaxed max-w-xs">
               Gelişmiş şelat teknolojisiyle formüle edilmiş kedi ve köpek mineral takviyesi.
             </p>
 
-            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-brand-green-400">
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-teal-400/70">
               Gerçek Emilim • Gerçek Sonuç
             </p>
 
@@ -57,7 +53,7 @@ export default function Footer() {
                 href="https://www.instagram.com/nuriopet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/20 transition-colors"
+                className="w-9 h-9 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/15 transition-colors"
                 aria-label="Instagram @nuriopet"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -68,7 +64,7 @@ export default function Footer() {
                 href="https://advanimal.com.tr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/20 transition-colors"
+                className="w-9 h-9 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/15 transition-colors"
                 aria-label="advanimal.com.tr"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -81,7 +77,7 @@ export default function Footer() {
 
           {/* Nav column */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-5">
+            <p className="text-xs font-semibold tracking-widest uppercase text-white/35 mb-5">
               Site Haritası
             </p>
             <nav className="flex flex-col gap-3">
@@ -89,12 +85,12 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-white/45 hover:text-white transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href="#satin-al" className="text-sm text-brand-green-400 hover:text-brand-green-300 font-semibold transition-colors">
+              <Link href="#satin-al" className="text-sm text-teal-400 hover:text-teal-300 font-semibold transition-colors">
                 Satın Al →
               </Link>
             </nav>
@@ -103,21 +99,21 @@ export default function Footer() {
           {/* Products + Contact column */}
           <div className="flex flex-col gap-8">
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-5">
+              <p className="text-xs font-semibold tracking-widest uppercase text-white/35 mb-5">
                 Ürünler
               </p>
               <div className="flex flex-col gap-3">
-                <Link href="#nurio-dog" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <Link href="#nurio-dog" className="text-sm text-white/45 hover:text-white transition-colors flex items-center gap-2">
                   <span aria-hidden="true">🐕</span> Nurio Dog
                 </Link>
-                <Link href="#nurio-cat" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <Link href="#nurio-cat" className="text-sm text-white/45 hover:text-white transition-colors flex items-center gap-2">
                   <span aria-hidden="true">🐈</span> Nurio Cat
                 </Link>
               </div>
             </div>
 
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-5">
+              <p className="text-xs font-semibold tracking-widest uppercase text-white/35 mb-5">
                 İletişim
               </p>
               <div className="flex flex-col gap-2">
@@ -125,7 +121,7 @@ export default function Footer() {
                   href="https://www.instagram.com/nuriopet"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-white/45 hover:text-white transition-colors"
                 >
                   @nuriopet
                 </a>
@@ -133,7 +129,7 @@ export default function Footer() {
                   href="https://advanimal.com.tr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-white/45 hover:text-white transition-colors"
                 >
                   advanimal.com.tr
                 </a>
@@ -144,10 +140,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-white/25">
             © {new Date().getFullYear()} Nurio Pet. Tüm hakları saklıdır.
           </p>
-          <p className="text-xs text-gray-600 max-w-md md:text-right leading-relaxed">
+          <p className="text-xs text-white/25 max-w-md md:text-right leading-relaxed">
             Bu ürün bir ilaç değildir. Hastalıkların önlenmesi veya tedavisi amacıyla kullanılmaz.
             Özel durumlarda veteriner hekiminize danışınız.
           </p>
@@ -155,9 +151,9 @@ export default function Footer() {
 
         {/* Studio credit */}
         <div className="mt-6 pt-4 border-t border-white/[0.03] text-center">
-          <p className="text-[10px] tracking-[0.2em] uppercase text-gray-700">
+          <p className="text-[10px] tracking-[0.2em] uppercase text-white/20">
             Powered by{' '}
-            <span className="text-gray-500 font-medium">TAVAKOLISTUDIO</span>
+            <span className="text-white/35 font-medium">TAVAKOLISTUDIO</span>
           </p>
         </div>
       </div>

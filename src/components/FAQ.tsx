@@ -10,7 +10,7 @@ export default function FAQ() {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section id="sss" className="section-py bg-brand-beige" ref={ref}>
+    <section id="sss" className="section-py" ref={ref}>
       <div className="container-xl">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -19,7 +19,8 @@ export default function FAQ() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <span className="badge bg-white text-gray-600 border border-gray-200 mb-4">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase
+                             bg-white/8 text-white/65 border border-white/15 mb-4">
               Sık Sorulan Sorular
             </span>
             <h2 className="section-title mb-4">
@@ -42,30 +43,30 @@ export default function FAQ() {
                   transition={{ duration: 0.4, delay: i * 0.06 }}
                 >
                   <button
-                    className="w-full flex items-start justify-between gap-4 p-6 text-left group"
+                    className="w-full flex items-start justify-between gap-4 p-6 text-left group cursor-pointer"
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
                   >
                     <span className="flex items-start gap-4 flex-1 min-w-0">
-                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-green-50 text-brand-green-700 flex items-center justify-center text-xs font-bold mt-0.5">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-500/20 text-teal-300 flex items-center justify-center text-xs font-bold mt-0.5">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <span className="text-sm font-semibold text-gray-900 leading-snug group-hover:text-brand-green-700 transition-colors">
+                      <span className="text-sm font-semibold text-white/80 leading-snug group-hover:text-white transition-colors">
                         {item.question}
                       </span>
                     </span>
                     <span
-                      className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 mt-0.5 ${
+                      className={`flex-shrink-0 w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-200 mt-0.5 ${
                         isOpen
-                          ? 'bg-brand-green-700 border-brand-green-700 rotate-180'
-                          : 'border-gray-300 group-hover:border-brand-green-400'
+                          ? 'bg-teal-500 border-teal-500 rotate-180'
+                          : 'border-white/20 group-hover:border-teal-400/50'
                       }`}
                       aria-hidden="true"
                     >
                       <svg
                         viewBox="0 0 12 12"
                         fill="none"
-                        className={`w-3 h-3 transition-colors ${isOpen ? 'text-white' : 'text-gray-500'}`}
+                        className={`w-3 h-3 transition-colors ${isOpen ? 'text-white' : 'text-white/45'}`}
                         stroke="currentColor"
                         strokeWidth="2"
                       >
@@ -85,7 +86,7 @@ export default function FAQ() {
                         className="overflow-hidden"
                       >
                         <div className="px-6 pb-6 pl-[4.25rem]">
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-sm text-white/60 leading-relaxed">
                             {item.answer}
                           </p>
                         </div>
@@ -103,13 +104,13 @@ export default function FAQ() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5 }}
           >
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-white/45">
               Başka sorularınız mı var?{' '}
               <a
                 href="https://www.instagram.com/nuriopet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand-green-700 font-semibold hover:underline"
+                className="text-teal-400 font-semibold hover:text-teal-300 transition-colors"
               >
                 Instagram'dan bize ulaşın
               </a>

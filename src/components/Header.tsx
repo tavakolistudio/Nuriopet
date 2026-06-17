@@ -21,8 +21,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/97 backdrop-blur-md shadow-sm border-b border-gray-100'
-          : 'bg-white/80 backdrop-blur-sm'
+          ? 'bg-black/30 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/10'
+          : 'bg-white/5 backdrop-blur-md border-b border-white/5'
       }`}
     >
       <div className="container-xl">
@@ -46,7 +46,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-brand-green-700 transition-colors duration-200"
+                className="text-sm font-medium text-white/65 hover:text-white transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -55,14 +55,19 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="#satin-al" className="btn-primary text-sm py-2.5 px-5">
+            <Link
+              href="#satin-al"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+                         bg-teal-500 hover:bg-teal-400 text-white border border-transparent
+                         transition-all duration-200 shadow-lg shadow-teal-900/30"
+            >
               Satın Al
             </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-white/70 hover:bg-white/10 transition-colors cursor-pointer"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
             aria-expanded={menuOpen}
@@ -77,19 +82,24 @@ export default function Header() {
 
         {/* Mobile menu */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-96 pb-4' : 'max-h-0'}`}>
-          <nav className="flex flex-col gap-1 pt-2 border-t border-gray-100">
+          <nav className="flex flex-col gap-1 pt-2 border-t border-white/10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand-green-700 hover:bg-brand-green-50 rounded-lg transition-colors"
+                className="px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/8 rounded-lg transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <div className="pt-3 px-4">
-              <Link href="#satin-al" onClick={handleLinkClick} className="btn-primary w-full text-center">
+              <Link
+                href="#satin-al"
+                onClick={handleLinkClick}
+                className="w-full text-center inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+                           bg-teal-500 hover:bg-teal-400 text-white transition-all duration-200"
+              >
                 Satın Al
               </Link>
             </div>

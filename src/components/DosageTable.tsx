@@ -10,7 +10,7 @@ export default function DosageTable({ entries, accentColor, animal }: Props) {
   const isDog = animal === 'dog';
 
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200">
+    <div className="overflow-hidden rounded-xl border border-white/10">
       <table className="w-full text-sm">
         <thead>
           <tr style={{ background: accentColor }}>
@@ -25,13 +25,13 @@ export default function DosageTable({ entries, accentColor, animal }: Props) {
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-100 bg-white">
+        <tbody className="divide-y divide-white/5">
           {entries.map((entry, i) => (
             <tr
               key={entry.weightRange}
-              className="hover:bg-gray-50 transition-colors"
+              className="hover:bg-white/5 transition-colors"
             >
-              <td className="px-5 py-4 font-medium text-gray-800">
+              <td className="px-5 py-4 font-medium text-white/80">
                 {entry.weightRange}
               </td>
               <td className="px-5 py-4">
@@ -42,7 +42,7 @@ export default function DosageTable({ entries, accentColor, animal }: Props) {
                   {entry.dose}
                 </span>
               </td>
-              <td className="px-5 py-4 text-gray-500 text-xs hidden sm:table-cell">
+              <td className="px-5 py-4 text-white/45 text-xs hidden sm:table-cell">
                 {isDog
                   ? i === 0
                     ? '½ saşe (0,5 g saşeyi ikiye bölün)'
@@ -63,9 +63,9 @@ export default function DosageTable({ entries, accentColor, animal }: Props) {
           ))}
         </tbody>
       </table>
-      <div className="bg-gray-50 px-5 py-3 border-t border-gray-200">
-        <p className="text-xs text-gray-500">
-          <span className="font-semibold">Not:</span> Veteriner hekiminizin önerisi olmadan günlük kullanıma geçilmemelidir. Kullanım sıklığı yalnızca veteriner önerisiyle haftada 2 keze çıkarılabilir.
+      <div className="bg-white/[0.03] px-5 py-3 border-t border-white/8">
+        <p className="text-xs text-white/40">
+          <span className="font-semibold text-white/55">Not:</span> Veteriner hekiminizin önerisi olmadan günlük kullanıma geçilmemelidir. Kullanım sıklığı yalnızca veteriner önerisiyle haftada 2 keze çıkarılabilir.
         </p>
       </div>
     </div>

@@ -81,7 +81,7 @@ export default function TrustSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="section-py bg-gray-950" ref={ref}>
+    <section className="section-py" ref={ref}>
       <div className="container-xl">
         <motion.div
           className="text-center mb-14"
@@ -89,13 +89,14 @@ export default function TrustSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <span className="badge bg-white/10 text-white/80 border border-white/20 mb-4">
-            Güven & Güvenlik
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase
+                           bg-white/10 text-white/75 border border-white/20 mb-4">
+            Güven &amp; Güvenlik
           </span>
-          <h2 className="section-title text-white mb-4">
+          <h2 className="section-title mb-4">
             Neden Nurio'ya Güvenebilirsiniz?
           </h2>
-          <p className="section-subtitle mx-auto text-center text-gray-400">
+          <p className="section-subtitle mx-auto text-center">
             Bilimsel şeffaflık, net dozaj ve abartısız iletişim — güvenin temelini bunlar oluşturur.
           </p>
         </motion.div>
@@ -104,19 +105,19 @@ export default function TrustSection() {
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-7 flex flex-col gap-4 hover:bg-white/8 transition-colors duration-200"
+              className="card p-7 flex flex-col gap-4 group hover:bg-white/[0.12] transition-colors duration-200"
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="w-14 h-14 rounded-xl bg-brand-green-700/20 text-brand-green-400 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center group-hover:bg-teal-500/25 transition-colors">
                 {pillar.icon}
               </div>
               <div>
                 <h3 className="text-base font-bold text-white mb-2">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-sm text-white/55 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
@@ -126,18 +127,18 @@ export default function TrustSection() {
 
         {/* Disclaimer banner */}
         <motion.div
-          className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col md:flex-row items-start md:items-center gap-4"
+          className="mt-12 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 flex flex-col md:flex-row items-start md:items-center gap-4"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-full bg-amber-500/15 flex items-center justify-center flex-shrink-0">
             <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-amber-400">
               <path fillRule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" />
             </svg>
           </div>
-          <p className="text-sm text-gray-400 leading-relaxed">
-            <span className="font-semibold text-white">Yasal Uyarı:</span>{' '}
+          <p className="text-sm text-white/50 leading-relaxed">
+            <span className="font-semibold text-white/80">Yasal Uyarı:</span>{' '}
             Nurio bir ilaç değildir. Hastalıkların teşhisi, önlenmesi veya tedavisi amacıyla
             kullanılmaz ve kullanılmamalıdır. Tüm ürün iddiaları takviye niteliğinde olup
             veteriner hekimi tavsiyesinin yerini tutmaz. Evcil hayvanınızın sağlık durumu
