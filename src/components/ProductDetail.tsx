@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { products } from '@/data/products';
@@ -12,6 +12,16 @@ export default function ProductDetail() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
+  useEffect(() => {
+    const handleHash = () => {
+      if (window.location.hash === '#nurio-cat') setActive('cat');
+      else if (window.location.hash === '#nurio-dog') setActive('dog');
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   const product = products.find((p) => p.animal === active)!;
   const isDog = product.animal === 'dog';
   const accentText = isDog ? 'text-teal-400' : 'text-blue-400';
@@ -19,7 +29,10 @@ export default function ProductDetail() {
   const accentBullet = isDog ? 'bg-teal-500' : 'bg-blue-500';
 
   return (
-    <section className="section-py" ref={ref}>
+    <section className="section-py relative" ref={ref}>
+      {/* Static anchors — always in DOM so #nurio-dog / #nurio-cat links work */}
+      <span id="nurio-dog" className="absolute -top-20 pointer-events-none" aria-hidden="true" />
+      <span id="nurio-cat" className="absolute -top-20 pointer-events-none" aria-hidden="true" />
       <div className="container-xl">
         <motion.div
           className="text-center mb-10"
@@ -72,7 +85,7 @@ export default function ProductDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div id={product.id} className="rounded-2xl border border-white/10 overflow-hidden bg-white/[0.05] backdrop-blur-xl">
+          <div className="rounded-2xl border border-white/10 overflow-hidden bg-white/[0.05] backdrop-blur-xl">
             {/* Header band */}
             <div
               className="px-8 py-10 flex flex-col md:flex-row items-center gap-8"
