@@ -153,7 +153,14 @@ export default function Footer() {
         <div className="mt-6 pt-4 border-t border-white/[0.03] text-center">
           <p className="text-[10px] tracking-[0.2em] uppercase text-white/20">
             Powered by{' '}
-            <span className="text-white/35 font-medium">TAVAKOLISTUDIO</span>
+            <a
+              href="https://tavakolistudio.vercel.app/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/35 font-medium hover:text-white/60 transition-colors"
+            >
+              TAVAKOLISTUDIO
+            </a>
           </p>
         </div>
       </div>
