@@ -31,7 +31,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="#" onClick={handleLinkClick} className="flex items-center group">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-pet.png"
               alt="Nurio Pet — Şelatlı Mineral Takviyesi"
               width={130}
               height={52}
